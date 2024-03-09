@@ -17,6 +17,7 @@ The system would be constructed, which includes one x_selector and one y_selecto
 - [x] 2D to 3D
 - [x] combined with y-selector
 - [ ] plot electron position and charge (by different colors).
+- [ ]  complete comments
 - [ ] plot x-z plane and y-z plane.
 - [ ] convert to python
 - [ ] write python unit test and test automation with github action.
