@@ -11,3 +11,12 @@ The rejected particle possesses only an initial velocity along the z-axis. It wi
 The particle's trajectory shifts by the presence of the electrical field in space.
 ### Outlook
 The system would be constructed, which includes one x_selector and one y_selector through 3-dimensions.
+
+### Todo
+- [x] x-selector
+- [x] 2D to 3D
+- [x] combined with y-selector
+- [ ] plot electron position and charge (by different colors).
+- [ ] plot x-z plane and y-z plane.
+- [ ] convert to python
+- [ ] write python unit test and test automation with github action.
