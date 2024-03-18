@@ -1,7 +1,7 @@
-from src.selector import Selector
+from selector import Selector
 import matplotlib.pyplot as plt
 import numpy as np
-from src.particle import Particle_trajectory
+from particle import Particle_trajectory
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import RegularGridInterpolator
 
