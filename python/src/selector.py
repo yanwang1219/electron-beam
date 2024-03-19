@@ -52,7 +52,11 @@ class Selector:
         # reduce todo
        
         positions[0] = self.calculate_single_E_field(positions[0],charge)
-        E = reduce (lambda E_sum, pos: E_sum + self.calculate_single_E_field(pos,charge),positions)
+        def sum(E_sum, pos):
+            E_sum = E_sum +  self.calculate_single_E_field(pos, charge)
+            return E_sum
+        E = reduce(sum, positions)
+        #E = reduce (lambda E_sum, pos: E_sum + self.calculate_single_E_field(pos,charge),positions)
         color = "red"
         if charge < 0:
             color = "black"
