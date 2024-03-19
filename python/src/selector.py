@@ -33,17 +33,24 @@ class Selector:
         # E_z = np.zeros(self.mesh_grid[0].shape)
         # E_y = np.zeros(self.mesh_grid[1].shape)
         # E_x = np.zeros(self.mesh_grid[2].shape)
-        positions = []
+        # positions = []
         #linspace_mesh_grid todo
-        for i in range(electric_number[0]):        #z,y,x 
-            for n in range(electric_number[1]):
-                for v in range(electric_number[2]):
-                    positions.append((
-                        i/(electric_number[0]+10e-8)*length[0] + center_point[0]-length[0]/2,
-                        n/(electric_number[1]+10e-8)*length[1] + center_point[1]-length[1]/2,
-                        v/(electric_number[2]+10e-8)*length[2] + center_point[2]-length[2]/2,
-                    ))
+        z = np.linspace(center_point[0]-length[0]/2, length[0], electric_number[0])
+        y = np.linspace(center_point[1]-length[1]/2, length[1], electric_number[1])
+        x = np.linspace(center_point[2]-length[2]/2, length[2], electric_number[2])
+        total = np.meshgrid(z,y,x)
+        positions = np.array((total[0].flatten(),total[1].flatten(),total[2].flatten())).T.tolist()
+        
+        # for i in range(electric_number[0]):        #z,y,x 
+        #     for n in range(electric_number[1]):
+        #         for v in range(electric_number[2]):
+        #             positions.append((
+        #                 i/(electric_number[0]+10e-8)*length[0] + center_point[0]-length[0]/2,
+        #                 n/(electric_number[1]+10e-8)*length[1] + center_point[1]-length[1]/2,
+        #                 v/(electric_number[2]+10e-8)*length[2] + center_point[2]-length[2]/2,
+        #             ))
         # reduce todo
+       
         positions[0] = self.calculate_single_E_field(positions[0],charge)
         E = reduce (lambda E_sum, pos: E_sum + self.calculate_single_E_field(pos,charge),positions)
         color = "red"
