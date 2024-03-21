@@ -18,5 +18,5 @@ The system would be constructed, which includes one x_selector and one y_selecto
 - [x] combined with y-selector
 - [x] plot electron position and charge (by different colors)
 - [x]  complete comments
-- [ ] convert to python
+- [x] convert to python
 - [ ] write python unit test and test automation with github action.

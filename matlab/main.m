@@ -12,9 +12,9 @@ n_y = 5;                                                                   % num
 n_x = 5;                                                                   % number of electrons on each plate along x-axis. For x selector, will be replaced by 1.
 d = 8;                                                                     % distance between two plates in one pair plate.
 resolution = 5;                                                            % how many points in each meter.
-q = 1;                                                                     % electrical amplitude of each electron.
+q = 0.1;                                                                   % electrical amplitude of each electron.
 m = 2;                                                                     % the mass of electron.
-X0 = [0, -1, -1, 15,0, 0];                                                 % initial state of released particle: [z-velocity, x-velocity, y-velocity, z-acceleration, x-acceleration, y-acceleration]
+X0 = [0, -1, -1, 15, 0, 0];                                                % initial state of released particle: [z-velocity, x-velocity, y-velocity, z-acceleration, x-acceleration, y-acceleration]
 delta_t = 0.01;                                                            % simulation time step.
 t_max = 10000;                                                             % max simulation time steps.
 
@@ -67,7 +67,7 @@ for i = 2:t_max + 1
         interp3(z_mesh, x_mesh,y_mesh,  Ey, ...                            % get electrical field along y-axis applied on partical.
             trajectory(i-1, 1), trajectory(i-1, 2), trajectory(i-1, 3))];               
     trajectory(i,:) = ...                                                  % get the next state of electron: [z-velocity, x-velocity, y-velocity, z-acceleration, x-acceleration, y-acceleration].
-        electron(trajectory(i-1,:), E_partical, delta_t, q, m);            
+        electron(trajectory(i-1,:), E_partical, delta_t, 10, m);            
     if trajectory(i,1) < 0 ||...                                           % judge whether the particle is over boundary
             trajectory(i,1) > space_size(1) || ...
             trajectory(i,2) < - space_size(2) / 2 ||...
