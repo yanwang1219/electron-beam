@@ -12,9 +12,9 @@ n_y = 5;                                                                   % num
 n_x = 5;                                                                   % number of electrons on each plate along x-axis. For x selector, will be replaced by 1.
 d = 8;                                                                     % distance between two plates in one pair plate.
 resolution = 5;                                                            % how many points in each meter.
-q = 1;                                                                     % electrical amplitude of each electron.
+q = 0.1;                                                                   % electrical amplitude of each electron.
 m = 2;                                                                     % the mass of electron.
-X0 = [0, -1, -1, 15, 0, 0];                                                 % initial state of released particle: [z-velocity, x-velocity, y-velocity, z-acceleration, x-acceleration, y-acceleration]
+X0 = [0, -1, -1, 15, 0, 0];                                                % initial state of released particle: [z-velocity, x-velocity, y-velocity, z-acceleration, x-acceleration, y-acceleration]
 delta_t = 0.01;                                                            % simulation time step.
 t_max = 10000;                                                             % max simulation time steps.
 
